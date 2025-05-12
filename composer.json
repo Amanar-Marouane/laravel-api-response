@@ -1,0 +1,19 @@
+{
+    "name": "unk/laravel-api-response",
+    "description": "Laravel trait for standard API HTTP responses",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Unk\\LaravelApiResponse\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Amanar Marouane",
+            "email": "marouane.amanar07@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
