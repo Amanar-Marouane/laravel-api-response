@@ -1,0 +1,10 @@
+Next V will include:
+    '✅ Auto-detect Laravel API Resources or Collections and wrap them properly in success responses.',
+    '✅ Add a paginated() method that automatically formats pagination meta data (current_page, total, per_page, etc).',
+    '✅ Support debug mode (e.g. via .env) that adds exception and trace info in error responses for local/dev only.',
+    '✅ Enable Laravel translation support for response messages using __() helper.',
+    '✅ Provide constants or enum-like status codes: e.g., self::NOT_FOUND, self::CREATED for better readability.',
+    '✅ Add static testing helpers like HttpResponse::mockSuccess() or ::mockError() for easier response testing.',
+    '✅ Register response macros: response()->success($data), response()->error($msg) via a service provider.',
+    '✅ Create a middleware that auto-wraps JSON responses into standardized success/error formats unless opted out.',
+    '✅ Optional JSON:API output format (e.g., { data: ..., errors: ..., meta: ... }) for advanced compliance.',
