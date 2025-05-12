@@ -8,6 +8,14 @@
             "Unk\\LaravelApiResponse\\": "src/"
         }
     },
+    "scripts": {
+        "post-install-cmd": [
+            "composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "composer dump-autoload"
+        ]
+    },
     "authors": [
         {
             "name": "Amanar Marouane",
