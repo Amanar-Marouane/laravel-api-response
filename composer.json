@@ -1,5 +1,5 @@
 {
-    "name": "unk/laravel-api-response",
+    "name": "unk-fy/laravel-api-response",
     "description": "Laravel trait for standard API HTTP responses",
     "type": "library",
     "license": "MIT",
