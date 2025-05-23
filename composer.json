@@ -25,6 +25,6 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "yajra/laravel-datatables": "^10.0"
+        "yajra/laravel-datatables": "^12.0"
     }
 }
