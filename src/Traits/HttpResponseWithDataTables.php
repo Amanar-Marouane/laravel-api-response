@@ -4,6 +4,8 @@ namespace Unk\LaravelApiResponse\Traits;
 
 use Illuminate\Http\JsonResponse;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Request;
 
 trait HttpResponseWithDataTables
 {
@@ -11,6 +13,10 @@ trait HttpResponseWithDataTables
 
     protected function successDataTable($data, $draw = 1, $start = 0, $length = 10, $message = null, $code = 200): JsonResponse
     {
+        if ($data instanceof JsonResource) {
+            $data = $data->resolve(Request::instance());
+        }
+
         $datatable = DataTables::of($data)->make(true);
         $response = $datatable->getData(true);
 
