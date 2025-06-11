@@ -3,8 +3,8 @@
 namespace Unk\LaravelApiResponse\Traits;
 
 use Illuminate\Http\JsonResponse;
-use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Request;
 
 trait HttpResponseWithDataTables
@@ -13,6 +13,8 @@ trait HttpResponseWithDataTables
 
     protected function successDataTable($data, $draw = 1, $start = 0, $length = 10, $message = null, $code = 200): JsonResponse
     {
+        $length = max(1, (int)$length);
+
         if ($data instanceof JsonResource) {
             $data = $data->resolve(Request::instance());
         }
@@ -44,6 +46,9 @@ trait HttpResponseWithDataTables
 
     protected function errorDataTable($draw = 1, $length = 10, $message = null, $code = 400): JsonResponse
     {
+        // Ensure length is at least 1 to prevent division by zero
+        $length = max(1, (int)$length);
+
         return response()->json([
             'status' => 'error',
             'message' => $message,
